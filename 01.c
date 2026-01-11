@@ -3,6 +3,7 @@
 //
 
 #include <stdlib.h>
+#include <stdint.h>
 
 typedef struct {
     int key;     // nums value
@@ -61,7 +62,7 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
         int j;
         if (map_find(tab, cap, need, &j)) {
             int *ans = (int*)malloc(sizeof(int) * 2);
-            if (!ans) { free(tab); return NULL; }
+            if (!ans) { free(tab); return NULL; }  //处理ans malloc失败的情况
             ans[0] = j;
             ans[1] = i;
             if (returnSize) *returnSize = 2;
