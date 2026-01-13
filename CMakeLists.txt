@@ -7,3 +7,5 @@ set(CMAKE_C_STANDARD 17)
 add_executable(Leetcode main.cpp)
 
 add_executable(01 01.c)
+
+add_executable(04 04.c)
