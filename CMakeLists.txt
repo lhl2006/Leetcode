@@ -13,3 +13,7 @@ add_executable(04 04.c)
 add_executable(15 15.c)
 
 add_executable(16 16.c)
+
+add_executable(18 18.c)
+
+add_executable(19 19.c)
