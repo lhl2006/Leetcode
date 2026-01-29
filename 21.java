@@ -3,7 +3,7 @@ class Solution {
         int [][]box = new int[26][26];
         for(int i = 0;i < 26;i++){
             for(int j = 0;j < 26;j++){
-                box[i][j] = 10000000;
+                box[i][j] = Integer.MAX_VALUE;
             }
         }
         for(int i = 0;i < original.length;i++){
@@ -15,9 +15,11 @@ class Solution {
         }
         for(int k = 0;k < 26;k++){
             for(int i = 0;i < 26;i++){
+                int cost1 = box[i][k];
+                if(cost1 == Integer.MAX_VALUE) continue;
                 for(int j = 0;j < 26;j++){
-                    int cost1 = box[i][k],cost2 = box[k][j];
-                    if(cost1 == 10000000 || cost2 == 10000000) continue;
+                    int cost2 = box[k][j];
+                    if(cost2 == Integer.MAX_VALUE) continue;
                     if(cost1 + cost2 < box[i][j]) box[i][j] = cost1 + cost2;
                 }
             }
@@ -28,7 +30,7 @@ class Solution {
             char b = target.charAt(i);
             if(a == b) continue;
             int cos = box[a - 'a'][b - 'a'];
-            if(cos == 10000000) return -1;
+            if(cos == Integer.MAX_VALUE) return -1;
             else result += cos;
         }
         return result;
