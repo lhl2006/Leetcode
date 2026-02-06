@@ -19,3 +19,5 @@ add_executable(18 18.c)
 add_executable(19 19.c)
 
 add_executable(20 20.cpp)
+
+add_executable(29 29.c)
