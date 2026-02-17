@@ -1,4 +1,28 @@
 //
+// Created by GPT on 2026/2/17.
+//
+/*#include <stdio.h>
+#include <stdlib.h>
+
+char** readBinaryWatch(int turnedOn, int* returnSize) {
+    char** res = (char**)malloc(sizeof(char*) * 720);
+    int cnt = 0;
+
+    for (int h = 0; h < 12; h++) {
+        for (int m = 0; m < 60; m++) {
+            if (__builtin_popcount((unsigned)h) + __builtin_popcount((unsigned)m) == turnedOn) {
+                res[cnt] = (char*)malloc(6);              // "11:59" + '\0'
+                snprintf(res[cnt], 6, "%d:%02d", h, m);   // 分钟补 0
+                cnt++;
+            }
+        }
+    }
+
+    *returnSize = cnt;
+    return res;
+}*/
+
+//
 // Created by lhl on 2026/2/17.
 //
 /**
