@@ -20,3 +20,16 @@ int countPrimeSetBits(int left, int right) {
     }
     return result;
 }
+
+
+// GPT
+/*
+int countPrimeSetBits(int left, int right) {
+    const int prime_mask = 665772; // bits: 2,3,5,7,11,13,17,19
+    int ans = 0;
+    for (int x = left; x <= right; ++x) {
+        ans += (prime_mask >> __builtin_popcount((unsigned)x)) & 1;
+    }
+    return ans;
+}
+*/
